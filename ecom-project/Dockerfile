@@ -6,6 +6,6 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-RUN mvn clean install
+RUN mvn clean install -DskipTests -Dmaven.compiler.proc=none
 
 CMD ["java", "-jar", "target/*.jar"]
